@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Experience</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <h2>Professional Experience</h2>
+
+    <!-- Embed the content of resume.html here -->
+    <div id="resumeContent">
+        <!-- Content will be loaded here by JavaScript -->
+    </div>
+
+    <!-- Input field for file name -->
+    <input type="text" id="fileName" placeholder="Enter file name">
+
+    <!-- Button to trigger the download -->
+    <button onclick="downloadPDF()">Download PDF</button>
+
+    <script>
+        // Function to fetch and load the content of resume.html
+        window.onload = function() {
+            fetch('resume/resume.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('resumeContent').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading resume.html:', error));
+        };
+
+        // Function to download the content as PDF
+        function downloadPDF() {
+            // Get the user-specified file name
+            var fileName = document.getElementById("fileName").value || 'resume';
+
+            // Get the content of the resume
+            var element = document.getElementById('resumeContent');
+
+            // Convert HTML to PDF and trigger download
+            html2pdf()
+                .from(element)
+                .set({
+                    margin: 1,
+                    filename: fileName + '.pdf',
+                    html2canvas: { scale: 2 },
+                    jsPDF: { orientation: 'portrait', unit: 'in', format: 'letter' }
+                })
+                .save();
+        }
+    </script>
+
+</body>
+</html>
