@@ -12,9 +12,9 @@
             height: 100%;
             width: 100%;
         }
-        #resumeContent {
+        #resumeFrame {
             width: 100%;
-            overflow: visible; /* Ensure no scrolling */
+            border: none;
         }
     </style>
 </head>
@@ -24,25 +24,16 @@
     <!-- Button to trigger the download -->
     <button onclick="downloadPDF()">Download PDF</button>
 
-    <!-- Embed the content of resume.html here -->
-    <div id="resumeContent">
-        <!-- Content will be loaded here by JavaScript -->
-    </div>
+    <!-- Embed the content of resume.html inside an iframe -->
+    <iframe id="resumeFrame" src="resume/resume.html"></iframe>
 
     <script>
-        // Function to fetch and load the content of resume.html
+        // Function to dynamically adjust iframe height based on content
         window.onload = function() {
-            fetch('resume/resume.html')
-                .then(response => response.text())
-                .then(data => {
-                    // Load the content and resize the container to fit content
-                    var resumeContainer = document.getElementById('resumeContent');
-                    resumeContainer.innerHTML = data;
-
-                    // Dynamically adjust the height to fit content
-                    document.body.style.height = resumeContainer.scrollHeight + 'px';
-                })
-                .catch(error => console.error('Error loading resume.html:', error));
+            var iframe = document.getElementById('resumeFrame');
+            iframe.onload = function() {
+                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+            };
         };
 
         // Function to download the content as PDF
@@ -53,8 +44,8 @@
                            (now.getMonth() + 1).toString().padStart(2, '0');
             var fileName = 'niudu_resume_' + dateTime;
 
-            // Get the content of the resume
-            var element = document.getElementById('resumeContent');
+            // Get the content of the iframe
+            var element = iframe.contentWindow.document.body;
 
             // Convert HTML to PDF and trigger download
             html2pdf()
