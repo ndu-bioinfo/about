@@ -11,13 +11,12 @@
 
     <!-- Print.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.js"></script>
-    
-    <!-- html2pdf.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js?v=1.0.1"></script>
-    
-    <!-- Showdown.js for Markdown conversion -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
+    <!-- html2pdf.js (which includes html2canvas internally) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
+
+    <!-- Showdown.js for Markdown to HTML conversion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
 </head>
 
 <body>
@@ -67,10 +66,10 @@
             html2pdf()
             .from(element)
             .set({
-                margin: [1, 1, 1, 1], // Half-inch margins all around for US letter size
+                margin: [1, 1, 1, 1], // 1 inch margins
                 filename: fileName + '.pdf',
                 html2canvas: {
-                    scale: 2, // Increased scale for better quality and to avoid word chopping
+                    scale: 2, // Increased scale for better quality
                     useCORS: true // Ensures images or content loaded from other domains are handled properly
                 },
                 jsPDF: {
