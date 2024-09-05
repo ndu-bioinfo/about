@@ -7,14 +7,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js?v=1.0.1"></script>
     <style>
         html, body {
-            height: 100%;
             margin: 0;
             padding: 0;
-        }
-        #resumeContent {
             height: 100%;
             width: 100%;
-            overflow: auto;
+        }
+        #resumeContent {
+            width: 100%;
+            overflow: visible; /* Ensure no scrolling */
         }
     </style>
 </head>
@@ -35,7 +35,12 @@
             fetch('resume/resume.html')
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById('resumeContent').innerHTML = data;
+                    // Load the content and resize the container to fit content
+                    var resumeContainer = document.getElementById('resumeContent');
+                    resumeContainer.innerHTML = data;
+
+                    // Dynamically adjust the height to fit content
+                    document.body.style.height = resumeContainer.scrollHeight + 'px';
                 })
                 .catch(error => console.error('Error loading resume.html:', error));
         };
