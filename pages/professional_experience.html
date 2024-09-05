@@ -51,11 +51,11 @@
             html2pdf()
                 .from(element)
                 .set({
-                    margin: 0.75,
+                    margin: 0.5,
                     filename: fileName + '.pdf',
-                    html2canvas: { scale: 2, useCORS: true },
+                    html2canvas: { scale: 5, useCORS: true },
                     jsPDF: { orientation: 'portrait', unit: 'in', format: 'letter' },
-                    pagebreak: { mode: 'css' }
+                    pagebreak: { mode: 'css', before: '.newPage', avoid: ['h2', 'h3', 'h4', '.field'] },
                 })
                 .save();
         }
