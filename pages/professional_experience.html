@@ -4,36 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Experience</title>
-
-    <!-- External CSS files -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/print.css" media="print">
-
-    <!-- Print.js library -->
+    <link rel="stylesheet" href="css/print.css" media="print"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.js"></script>
-
-    <!-- html2pdf.js (which includes html2canvas internally) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
-
-    <!-- Showdown.js for Markdown to HTML conversion -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+
 </head>
 
 <body>
 
-    <!-- Buttons to trigger PDF download via different methods -->
-    <button onclick="downloadPDF()">Download PDF (html2pdf.js)</button>
-    <button onclick="printJS('resumeContent', 'html')">Download PDF (Print.js)</button>
+    <button onclick="downloadPDF()">Download PDF</button>
 
-    <!-- Embed the content of resume.md here -->
     <div id="resumeContent">
         Loading content...
     </div>
 
     <script>
-        // Function to fetch and load the content of resume.md, then convert to HTML
         window.onload = function() {
-            fetch('resume/resume.md')  // Path to your Markdown file
+            fetch('resume/resume.md') 
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Failed to load resume.md: ' + response.statusText);
@@ -41,11 +30,15 @@
                     return response.text();
                 })
                 .then(markdown => {
-                    // Parse the markdown into HTML using showdown.js
-                    var converter = new showdown.Converter();
+                    var converter = new showdown.Converter({
+                        tables: true, 
+                        simplifiedAutoLink: true, 
+                        smoothLivePreview: true,
+                        strikethrough: true, 
+                        tasklists: true 
+                    });
                     var htmlContent = converter.makeHtml(markdown);
 
-                    // Insert the HTML content into the div
                     document.getElementById('resumeContent').innerHTML = htmlContent;
                 })
                 .catch(error => {
@@ -54,7 +47,6 @@
                 });
         }
 
-        // Function to download the content as PDF using html2pdf.js
         function downloadPDF() {
             var now = new Date();
             var dateTime = now.getFullYear() + '-' + 
@@ -66,16 +58,16 @@
             html2pdf()
             .from(element)
             .set({
-                margin: [1, 1, 1, 1], // 1 inch margins
+                margin: [0.75, 0.75, 0.75, 0.75],
                 filename: fileName + '.pdf',
                 html2canvas: {
-                    scale: 2, // Increased scale for better quality
-                    useCORS: true // Ensures images or content loaded from other domains are handled properly
+                    scale: 2, 
+                    useCORS: true 
                 },
                 jsPDF: {
-                    orientation: 'portrait', // Portrait mode
-                    unit: 'in', // Unit set to inches
-                    format: 'letter' // US Letter paper size (8.5 x 11 inches)
+                    orientation: 'portrait', 
+                    unit: 'in', 
+                    format: 'letter'
                 }
             })
             .save();

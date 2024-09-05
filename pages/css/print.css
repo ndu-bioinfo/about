@@ -8,10 +8,16 @@
         padding: 20px;
         overflow: visible;
     }
-    h1, h2, h3, h4, h5, h6 {
-        page-break-after: avoid; /* Avoid chopping titles across pages */
+
+    /* Avoid breaking paragraphs, headers, lists, and divs across pages */
+    h1, h2, h3, h4, h5, h6, p, ul, ol, li, div {
+        page-break-inside: avoid;
+        page-break-before: auto;
+        page-break-after: auto;
     }
-    p, ul, ol {
-        page-break-inside: avoid; /* Avoid chopping paragraphs and lists */
+
+    /* Add a specific class for any element you want to control page breaks */
+    .page-break {
+        page-break-before: always;
     }
 }
