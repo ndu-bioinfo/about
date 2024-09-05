@@ -4,16 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Experience</title>
+
+    <!-- External CSS files -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/print.css" media="print">
-    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+
+    <!-- Print.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.js"></script>
+    
+    <!-- html2pdf.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js?v=1.0.1"></script>
+    
+    <!-- Showdown.js for Markdown conversion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+
+    <style>
+        /* Custom print styles */
+        @media print {
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+            }
+            #resumeContent {
+                width: 100%;
+                padding: 20px;
+                overflow: visible;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid; /* Avoid chopping titles across pages */
+            }
+            p, ul, ol {
+                page-break-inside: avoid; /* Avoid chopping paragraphs and lists */
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Button to trigger the download -->
-    <button onclick="downloadPDF()">Download PDF</button>
+    <!-- Buttons to trigger PDF download via different methods -->
+    <button onclick="downloadPDF()">Download PDF (html2pdf.js)</button>
+    <button onclick="printJS('resumeContent', 'html')">Download PDF (Print.js)</button>
 
     <!-- Embed the content of resume.md here -->
     <div id="resumeContent">
@@ -44,7 +75,7 @@
                 });
         }
 
-        // Function to download the content as PDF
+        // Function to download the content as PDF using html2pdf.js
         function downloadPDF() {
             var now = new Date();
             var dateTime = now.getFullYear() + '-' + 
