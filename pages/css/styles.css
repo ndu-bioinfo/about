@@ -1,30 +1,90 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
+/* General Body Styling */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    padding: 0 26px;
     line-height: 1.6;
+    word-wrap: break-word;
 }
-#resumeContent {
-    width: 100%;
-    height: 200%;
-    padding: 20px;
-    overflow: visible;
-}
+
+/* Heading Styles: Ensure they do not break between pages */
 h1, h2, h3, h4, h5, h6 {
-    color: #333;
+    page-break-before: avoid;
+    page-break-after: avoid;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
-p {
-    margin: 0 0 10px;
+
+/* Prevent breaking inside paragraphs, lists, tables */
+p, ul, ol, table {
+    page-break-inside: avoid;
+    margin-bottom: 10px;
 }
-ul, ol {
-    margin: 0 0 10px 20px;
+
+/* Page Break Class: Use this class to force page breaks */
+.page {
+    page-break-after: always;
 }
-a {
-    color: #007BFF;
-    text-decoration: none;
+
+/* Ensure images fit properly on the page and do not overflow */
+img {
+    max-width: 100%;
+    height: auto;
 }
-a:hover {
-    text-decoration: underline;
+
+/* Code Blocks: Pre-wrap to avoid text overflow and ensure readability */
+pre, code {
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    white-space: pre-wrap;  /* Prevent overflow by wrapping long lines */
+    overflow-wrap: break-word;
+}
+
+/* Blockquote Styling */
+blockquote {
+    margin: 0 7px 0 5px;
+    padding: 10px;
+    border-left: 5px solid rgba(0, 122, 204, 0.5);
+    background: rgba(127, 127, 127, 0.1);
+}
+
+/* Table Styling: Ensure tables collapse properly and look clean */
+table {
+    border-collapse: collapse;
+}
+
+table > thead > tr > th, 
+table > tbody > tr > td {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+/* Adjustments for PDF Export */
+@media print {
+    /* Set consistent margins for PDF */
+    @page {
+        margin: 1in;
+        size: A4; /* Change to 'letter' if using US Letter size */
+    }
+
+    /* Ensure consistent layout for print */
+    body {
+        margin: 0;
+        padding: 20px;
+    }
+
+    /* Specific elements to control page breaks */
+    h1, h2, h3, h4, h5, h6, p, ul, ol, table, blockquote {
+        page-break-inside: avoid;
+    }
+
+    /* Manual page breaks for specific sections */
+    .page {
+        page-break-before: always;
+    }
 }
