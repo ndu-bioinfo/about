@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .tab-content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="about-me-tab" data-toggle="tab" href="#about-me" role="tab" aria-controls="about-me" aria-selected="true">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="professional-experience-tab" data-toggle="tab" href="#professional-experience" role="tab" aria-controls="professional-experience" aria-selected="false">Professional Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="bioinformatics-tab" data-toggle="tab" href="#bioinformatics" role="tab" aria-controls="bioinformatics" aria-selected="false">Bioinformatics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="fun-tab" data-toggle="tab" href="#fun" role="tab" aria-controls="fun" aria-selected="false">Fun</a>
+            </li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="about-me" role="tabpanel" aria-labelledby="about-me-tab">
+                <h2>About Me</h2>
+                <p>Welcome to my portfolio! I am a bioinformatics scientist with a passion for data analysis and machine learning. I enjoy solving complex biological problems using computational methods.</p>
+            </div>
+            <div class="tab-pane fade" id="professional-experience" role="tabpanel" aria-labelledby="professional-experience-tab">
+                <h2>Professional Experience</h2>
+                <p>Here is a summary of my professional experience:</p>
+                <ul>
+                    <li><strong>Senior Bioinformatics Scientist</strong> at Creyon Bio (September 2022 – May 2024)</li>
+                    <li><strong>Bioinformatics Engineer, Algorithm</strong> at Invitae Corporation (June 2020 – September 2022)</li>
+                    <li><strong>Postdoctoral Fellow</strong> at La Jolla Institute for Immunology (April 2019 – June 2020)</li>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="bioinformatics" role="tabpanel" aria-labelledby="bioinformatics-tab">
+                <h2>Bioinformatics</h2>
+                <p>In this section, I will share some of my bioinformatics projects and research work. Stay tuned for updates!</p>
+            </div>
+            <div class="tab-pane fade" id="fun" role="tabpanel" aria-labelledby="fun-tab">
+                <h2>Fun</h2>
+                <p>Outside of work, I enjoy hiking, playing the guitar, and experimenting with new recipes in the kitchen. Here are some of my favorite activities:</p>
+                <ul>
+                    <li>Hiking in the mountains</li>
+                    <li>Playing the guitar</li>
+                    <li>Cooking and trying new recipes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
