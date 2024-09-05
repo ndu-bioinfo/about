@@ -41,16 +41,16 @@
         <!-- Tab content -->
         <div class="tab-content">
             <div class="tab-pane fade show active" id="about-me" role="tabpanel" aria-labelledby="about-me-tab">
-                <div id="about-me-content"></div>
+                <iframe src="pages/about-me.html"></iframe>
             </div>
             <div class="tab-pane fade" id="professional-experience" role="tabpanel" aria-labelledby="professional-experience-tab">
-                <div id="professional-experience-content"></div>
+                <iframe src="pages/professional-experience.html"></iframe>
             </div>
             <div class="tab-pane fade" id="bioinformatics" role="tabpanel" aria-labelledby="bioinformatics-tab">
-                <div id="bioinformatics-content"></div>
+                <iframe src="pages/bioinformatics.html"></iframe>
             </div>
             <div class="tab-pane fade" id="fun" role="tabpanel" aria-labelledby="fun-tab">
-                <div id="fun-content"></div>
+                <iframe src="pages/fun.html"></iframe>
             </div>
         </div>
     </div>
@@ -59,23 +59,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Include marked.js for Markdown parsing -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        // Function to fetch and render Markdown content
-        function loadMarkdownContent(tabId, markdownFile) {
-            fetch(markdownFile)
-                .then(response => response.text())
-                .then(text => {
-                    document.getElementById(tabId).innerHTML = marked(text);
-                });
-        }
-
-        // Load content for each tab
-        loadMarkdownContent('about-me-content', '../pages/about-me.md');
-        loadMarkdownContent('professional-experience-content', '../pages/resume.md');
-        loadMarkdownContent('bioinformatics-content', '../pages/bioinformatics.md');
-        loadMarkdownContent('fun-content', '../pages/fun.md');
-    </script>
 </body>
 </html>
