@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Experience</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- marked.js -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js?v=1.0.1"></script>
     <style>
         html, body {
@@ -15,6 +15,7 @@
         }
         #resumeContent {
             width: 100%;
+            padding: 20px;
             overflow: visible;
         }
     </style>
@@ -27,26 +28,32 @@
 
     <!-- Embed the content of resume.md here -->
     <div id="resumeContent">
-        <!-- Markdown content will be loaded here by JavaScript -->
+        Loading content...
     </div>
 
     <script>
         // Function to fetch and load the content of resume.md, then convert to HTML
         window.onload = function() {
-            fetch('resume/resume.md')
-                .then(response => response.text())
-                .then(data => {
-                    // Use marked.js to convert Markdown to HTML
-                    var htmlContent = marked(data);
 
-                    // Inject the generated HTML into resumeContent div
-                    document.getElementById('resumeContent').innerHTML = htmlContent;
+        fetch('resume/resume.md')  // Path to your Markdown file
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Failed to load resume.md: ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(markdown => {
+            // Parse the markdown into HTML using marked.js
+            const htmlContent = marked.parse(markdown);
 
-                    // Adjust the height dynamically
-                    document.body.style.height = document.getElementById('resumeContent').scrollHeight + 'px';
-                })
-                .catch(error => console.error('Error loading resume.md:', error));
-        };
+            // Insert the HTML content into the div
+            document.getElementById('content').innerHTML = htmlContent;
+        })
+        .catch(error => {
+            console.error('Error loading resume.md:', error);
+            document.getElementById('content').innerHTML = 'Failed to load content.';
+        });
+
 
         // Function to download the content as PDF
         function downloadPDF() {
