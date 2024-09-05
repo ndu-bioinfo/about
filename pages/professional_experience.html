@@ -34,26 +34,25 @@
     <script>
         // Function to fetch and load the content of resume.md, then convert to HTML
         window.onload = function() {
+            fetch('resume/resume.md')  // Path to your Markdown file
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load resume.md: ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(markdown => {
+                    // Parse the markdown into HTML using marked.js
+                    const htmlContent = marked.parse(markdown);
 
-        fetch('resume/resume.md')  // Path to your Markdown file
-        .then(response => {
-            if (!response.ok) {
-            throw new Error('Failed to load resume.md: ' + response.statusText);
-            }
-            return response.text();
-        })
-        .then(markdown => {
-            // Parse the markdown into HTML using marked.js
-            const htmlContent = marked.parse(markdown);
-
-            // Insert the HTML content into the div
-            document.getElementById('content').innerHTML = htmlContent;
-        })
-        .catch(error => {
-            console.error('Error loading resume.md:', error);
-            document.getElementById('content').innerHTML = 'Failed to load content.';
-        });
-
+                    // Insert the HTML content into the div
+                    document.getElementById('resumeContent').innerHTML = htmlContent;
+                })
+                .catch(error => {
+                    console.error('Error loading resume.md:', error);
+                    document.getElementById('resumeContent').innerHTML = 'Failed to load content.';
+                });
+        }
 
         // Function to download the content as PDF
         function downloadPDF() {
