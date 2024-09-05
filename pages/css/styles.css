@@ -27,31 +27,3 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
-@media print {
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-    }
-    #resumeContent {
-        width: 100%;
-        padding: 20px;
-        overflow: visible;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        color: #333;
-    }
-    p {
-        margin: 0 0 10px;
-    }
-    ul, ol {
-        margin: 0 0 10px 20px;
-    }
-    a {
-        color: #007BFF;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-}

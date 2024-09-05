@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Experience</title>
+    <title>Niu Du, PhD - Resume</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
-
 </head>
 
 <body>
@@ -21,7 +20,7 @@
 
     <script>
         window.onload = function() {
-            fetch('resume/resume.md') 
+            fetch('resume/resume.md')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Failed to load resume.md: ' + response.statusText);
@@ -29,13 +28,8 @@
                     return response.text();
                 })
                 .then(markdown => {
-                    var converter = new showdown.Converter({
-                        tables: true, 
-                        simplifiedAutoLink: true, 
-                        smoothLivePreview: true,
-                        strikethrough: true, 
-                        tasklists: true 
-                    });
+
+                    var converter = new showdown.Converter();
                     var htmlContent = converter.makeHtml(markdown);
 
                     document.getElementById('resumeContent').innerHTML = htmlContent;
@@ -55,20 +49,14 @@
             var element = document.getElementById('resumeContent');
 
             html2pdf()
-            .from(element)
-            .set({
-                margin: 1,
-                filename: fileName + '.pdf',
-                html2canvas: {
-                    scale: 5, 
-                },
-                jsPDF: {
-                    orientation: 'portrait', 
-                    unit: 'in', 
-                    format: 'letter'
-                }, pagebreak: { mode: ['avoid-all'] } 
-            })
-            .save();
+                .from(element)
+                .set({
+                    margin: 0.75,
+                    filename: fileName + '.pdf',
+                    html2canvas: { scale: 2, useCORS: true },
+                    jsPDF: { orientation: 'portrait', unit: 'in', format: 'letter' }
+                })
+                .save();
         }
     </script>
 

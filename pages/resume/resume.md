@@ -40,6 +40,8 @@ September 2022 – May 2024
 - Developed machine learning algorithms for weight-based Negative Binomial likelihood estimation, improving the detection of active pharmaceutical ingredients in antisense oligonucleotide (ASO) drug development.  
 - Managed Docker containers for pipeline modules and implemented CI/CD pipelines for package repositories, significantly improving deployment efficiency and reliability.  
 - Evaluated and optimized sequencing platforms, leading troubleshooting efforts to improve sequencing reliability and operational efficiency, essential for high-throughput drug screening.  
+
+
 - Collaborated with the sequencing team to troubleshoot experimental issues and develop custom Python tools, supporting both production and research and development (R&D) operations in drug discovery.  
 - Established design and technical guidelines for pipeline frameworks, standardizing implementation and operational best practices in bioinformatics and drug discovery projects.  
 - Provided mentorship to junior bioinformatics scientists and created comprehensive onboarding documentation, streamlining team integration and enhancing productivity in data-driven drug discovery projects.  
