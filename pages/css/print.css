@@ -2,6 +2,8 @@
     body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
+        margin: 0;
+        padding: 0;
     }
     #resumeContent {
         width: 100%;
@@ -10,12 +12,18 @@
     }
     h1, h2, h3, h4, h5, h6 {
         color: #333;
+        page-break-after: avoid; /* Prevent heading from being split */
     }
     p {
         margin: 0 0 10px;
+        page-break-inside: avoid; /* Avoid breaking paragraphs */
     }
     ul, ol {
         margin: 0 0 10px 20px;
+        page-break-inside: avoid; /* Avoid breaking lists */
+    }
+    li {
+        page-break-inside: avoid; /* Avoid breaking list items */
     }
     a {
         color: #007BFF;
@@ -23,5 +31,15 @@
     }
     a:hover {
         text-decoration: underline;
+    }
+
+    /* Add extra space before new pages to prevent cutting off */
+    .page-break {
+        page-break-before: always; /* Force a new page */
+    }
+
+    /* Avoid breaking divs and sections */
+    div, section {
+        page-break-inside: avoid; /* Avoid breaking divs and sections across pages */
     }
 }
