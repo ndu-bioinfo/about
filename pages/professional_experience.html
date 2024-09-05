@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Experience</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- marked.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js?v=1.0.1"></script>
     <style>
         html, body {
@@ -12,9 +13,9 @@
             height: 100%;
             width: 100%;
         }
-        #resumeFrame {
+        #resumeContent {
             width: 100%;
-            border: none;
+            overflow: visible;
         }
     </style>
 </head>
@@ -24,30 +25,38 @@
     <!-- Button to trigger the download -->
     <button onclick="downloadPDF()">Download PDF</button>
 
-    <!-- Embed the content of resume.html inside an iframe -->
-    <iframe id="resumeFrame" src="resume/resume.html"></iframe>
+    <!-- Embed the content of resume.md here -->
+    <div id="resumeContent">
+        <!-- Markdown content will be loaded here by JavaScript -->
+    </div>
 
     <script>
-        // Function to dynamically adjust iframe height based on content
+        // Function to fetch and load the content of resume.md, then convert to HTML
         window.onload = function() {
-            var iframe = document.getElementById('resumeFrame');
-            iframe.onload = function() {
-                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-            };
+            fetch('resume/resume.md')
+                .then(response => response.text())
+                .then(data => {
+                    // Use marked.js to convert Markdown to HTML
+                    var htmlContent = marked(data);
+
+                    // Inject the generated HTML into resumeContent div
+                    document.getElementById('resumeContent').innerHTML = htmlContent;
+
+                    // Adjust the height dynamically
+                    document.body.style.height = document.getElementById('resumeContent').scrollHeight + 'px';
+                })
+                .catch(error => console.error('Error loading resume.md:', error));
         };
 
         // Function to download the content as PDF
         function downloadPDF() {
-            // Default file name with current date and time
             var now = new Date();
             var dateTime = now.getFullYear() + '-' + 
                            (now.getMonth() + 1).toString().padStart(2, '0');
             var fileName = 'niudu_resume_' + dateTime;
 
-            // Get the content of the iframe
-            var element = iframe.contentWindow.document.body;
+            var element = document.getElementById('resumeContent');
 
-            // Convert HTML to PDF and trigger download
             html2pdf()
                 .from(element)
                 .set({
