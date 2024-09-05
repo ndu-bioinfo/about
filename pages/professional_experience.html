@@ -61,14 +61,14 @@
                 margin: [1, 1, 1, 1],
                 filename: fileName + '.pdf',
                 html2canvas: {
-                    scale: 2, 
+                    scale: 1.5, 
                     useCORS: true 
                 },
                 jsPDF: {
                     orientation: 'portrait', 
                     unit: 'in', 
                     format: 'letter'
-                }
+                }, pagebreak: { mode: ['avoid-all', 'css', 'legacy'] } 
             })
             .save();
         }
