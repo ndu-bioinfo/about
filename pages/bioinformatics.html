@@ -21,14 +21,14 @@
         /* Styles for the iframe and its container */
         .iframe-container {
             position: relative;
-            width: 800px; /* Default small size */
-            height: 200px; /* Default small size */
+            width: 200px; /* Default minimized width */
+            height: 200px; /* Default minimized height */
             max-width: 1500px; /* Maximum width when expanded */
             max-height: 800px; /* Maximum height when expanded */
             transition: all 0.3s ease;
             overflow: hidden;
             margin: 20px 0;
-            text-align: center;
+            text-align: left; /* Align the iframe to the left */
         }
 
         .iframe-container iframe {
@@ -71,7 +71,7 @@
         .title {
             font-size: 16px;
             font-weight: bold;
-            text-align: center;
+            text-align: left;
             margin-bottom: 5px;
         }
 
@@ -81,7 +81,7 @@
 
     <!-- Bioinformatics Section with Expandable Iframe -->
     <div class="section" id="bioinformatics-section">
-        <div class="title">Bioinformatics Viewer</div> <!-- Title above the iframe -->
+        <div class="title">BayesCurveFit Kinibeads Result Viewer</div> <!-- Title above the iframe -->
         
         <div class="iframe-container" id="bioinformatics-container">
             <!-- Expand Button -->
