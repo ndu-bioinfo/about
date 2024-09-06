@@ -1,6 +1,8 @@
 # Niu Du, PhD
 
-**Phone:** +1 (858) 603-5663  | **Email:** ndu0328@gmail.com  | [GitHub: https://github.com/ndu-bioinfo](https://github.com/ndu-bioinfo)
+**Phone:** +1 (858) 603-5663  
+**Email:** ndu0328@gmail.com  
+[GitHub: https://github.com/ndu-bioinfo](https://github.com/ndu-bioinfo)
 
 
 ## Areas of Expertise
@@ -34,6 +36,8 @@ NGS pipelines, RNA-seq, DNA-seq, single-cell, CITE-seq, 16S/18S, metagenomics, m
 **J. Craig Venter Institute**  
 May 2024 – Current  
 - Developing a Bayesian statistics-based toolkit for drug discovery and clinical data analysis, specifically designed for undersampled datasets with outliers.  
+
+
 
 ### Senior Bioinformatics Scientist  
 **Creyon Bio**  
