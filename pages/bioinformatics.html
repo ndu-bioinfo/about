@@ -21,10 +21,10 @@
         /* Styles for the iframe and its container */
         .iframe-container {
             position: relative;
-            width: 200px; /* Default minimized width */
+            width: 400px; /* Default minimized width */
             height: 200px; /* Default minimized height */
             max-width: 1500px; /* Maximum width when expanded */
-            max-height: 800px; /* Maximum height when expanded */
+            max-height: 1200px; /* Maximum height when expanded */
             transition: all 0.3s ease;
             overflow: hidden;
             margin: 20px 0;
@@ -42,7 +42,7 @@
             width: 100%;
             max-width: 1500px;
             height: 100%;
-            max-height: 800px;
+            max-height: 1200px;
         }
 
         /* Expand and minimize buttons */
@@ -108,7 +108,7 @@
         function expandIframe() {
             container.classList.add('fullscreen');  // Add full screen class
             container.style.width = Math.min(window.innerWidth, 1500) + 'px'; // Expand to max 1500px or browser width
-            container.style.height = Math.min(window.innerHeight, 800) + 'px'; // Expand to max 800px or browser height
+            container.style.height = Math.min(window.innerHeight, 1200) + 'px'; // Expand to max 800px or browser height
             expandBtn.style.display = 'none';  // Hide expand button
             minimizeBtn.style.display = 'block';  // Show minimize button
         }
@@ -116,7 +116,7 @@
         // Function to minimize iframe back to default small size
         function minimizeIframe() {
             container.classList.remove('fullscreen');  // Remove full screen class
-            container.style.width = '200px';  // Default small width
+            container.style.width = '400px';  // Default small width
             container.style.height = '200px'; // Default small height
             expandBtn.style.display = 'block';  // Show expand button
             minimizeBtn.style.display = 'none';  // Hide minimize button
