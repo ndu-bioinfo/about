@@ -41,16 +41,16 @@
         <!-- Tab content -->
         <div class="tab-content">
             <div class="tab-pane fade show active" id="about-me" role="tabpanel" aria-labelledby="about-me-tab">
-                <iframe id="about-me-frame" src="pages/about-me.html"></iframe>
+                <iframe id="about-me-frame"></iframe>
             </div>
             <div class="tab-pane fade" id="professional-experience" role="tabpanel" aria-labelledby="professional-experience-tab">
-                <iframe id="professional-experience-frame" src="pages/professional_experience.html"></iframe>
+                <iframe id="professional-experience-frame"></iframe>
             </div>
             <div class="tab-pane fade" id="bioinformatics" role="tabpanel" aria-labelledby="bioinformatics-tab">
-                <iframe id="bioinformatics-frame" src="pages/bioinformatics.html"></iframe>
+                <iframe id="bioinformatics-frame"></iframe>
             </div>
             <div class="tab-pane fade" id="fun" role="tabpanel" aria-labelledby="fun-tab">
-                <iframe id="fun-frame" src="pages/fun.html"></iframe>
+                <iframe id="fun-frame"></iframe>
             </div>
         </div>
     </div>
@@ -61,24 +61,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-
-        function adjustIframeHeight(iframeId) {
-            var iframe = document.getElementById(iframeId);
-            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-        }
-
-        document.getElementById('about-me-frame').onload = function() {
-            adjustIframeHeight('about-me-frame');
-        };
-        document.getElementById('professional-experience-frame').onload = function() {
-            adjustIframeHeight('professional-experience-frame');
-        };
-        document.getElementById('bioinformatics-frame').onload = function() {
-            adjustIframeHeight('bioinformatics-frame');
-        };
-        document.getElementById('fun-frame').onload = function() {
-            adjustIframeHeight('fun-frame');
-        };
+        // Append a timestamp to the iframe sources to ensure cache update on every refresh
+        const timestamp = new Date().getTime();
+        document.getElementById('about-me-frame').src = 'pages/about-me.html?ts=' + timestamp;
+        document.getElementById('professional-experience-frame').src = 'pages/professional_experience.html?ts=' + timestamp;
+        document.getElementById('bioinformatics-frame').src = 'pages/bioinformatics.html?ts=' + timestamp;
+        document.getElementById('fun-frame').src = 'pages/fun.html?ts=' + timestamp;
     </script>
 </body>
 </html>
