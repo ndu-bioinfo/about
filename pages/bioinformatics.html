@@ -21,11 +21,14 @@
         /* Styles for the iframe and its container */
         .iframe-container {
             position: relative;
-            width: 100%;
-            max-width: 850px;
-            height: 450px;
+            width: 200px; /* Default small size */
+            height: 200px; /* Default small size */
+            max-width: 1500px; /* Maximum width when expanded */
+            max-height: 800px; /* Maximum height when expanded */
             transition: all 0.3s ease;
             overflow: hidden;
+            margin: 20px 0;
+            text-align: center;
         }
 
         .iframe-container iframe {
@@ -36,13 +39,10 @@
 
         /* Fullscreen styles */
         .fullscreen {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
+            max-width: 1500px;
             height: 100%;
-            z-index: 1000;
-            background-color: #fff;
+            max-height: 800px;
         }
 
         /* Expand and minimize buttons */
@@ -50,7 +50,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            padding: 10px;
+            padding: 8px;
             background-color: #007bff;
             color: white;
             border: none;
@@ -67,15 +67,22 @@
             display: none;
         }
 
+        /* Title styling */
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
     </style>
 </head>
 <body>
 
     <!-- Bioinformatics Section with Expandable Iframe -->
     <div class="section" id="bioinformatics-section">
-        <h2>Bioinformatics</h2>
-        <p>Click the frame below to expand it to full screen. You can revert it back by clicking the "Minimize" button.</p>
-
+        <div class="title">Bioinformatics Viewer</div> <!-- Title above the iframe -->
+        
         <div class="iframe-container" id="bioinformatics-container">
             <!-- Expand Button -->
             <button class="expand-btn" onclick="expandIframe()">Expand</button>
@@ -97,16 +104,20 @@
         const minimizeBtn = container.querySelector('.minimize-btn');
         const iframe = container.querySelector('iframe');
 
-        // Function to expand iframe to full screen
+        // Function to expand iframe to a larger size (max 1500x800 or browser size)
         function expandIframe() {
             container.classList.add('fullscreen');  // Add full screen class
+            container.style.width = Math.min(window.innerWidth, 1500) + 'px'; // Expand to max 1500px or browser width
+            container.style.height = Math.min(window.innerHeight, 800) + 'px'; // Expand to max 800px or browser height
             expandBtn.style.display = 'none';  // Hide expand button
             minimizeBtn.style.display = 'block';  // Show minimize button
         }
 
-        // Function to minimize iframe back to normal size
+        // Function to minimize iframe back to default small size
         function minimizeIframe() {
             container.classList.remove('fullscreen');  // Remove full screen class
+            container.style.width = '200px';  // Default small width
+            container.style.height = '200px'; // Default small height
             expandBtn.style.display = 'block';  // Show expand button
             minimizeBtn.style.display = 'none';  // Hide minimize button
         }
