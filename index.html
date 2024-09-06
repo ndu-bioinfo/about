@@ -15,7 +15,7 @@
         }
         iframe {
             width: 100%;
-            height: auto;
+            height: 100vh; /* Set the height to the full browser window height */
             border: none;
         }
     </style>
@@ -61,6 +61,21 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
+        // Set iframe height dynamically based on the browser's viewport height
+        function setIframeHeight() {
+            var viewportHeight = window.innerHeight;
+            var iframes = document.querySelectorAll('iframe');
+            iframes.forEach(function(iframe) {
+                iframe.style.height = viewportHeight + 'px';
+            });
+        }
+
+        // Set the initial iframe height
+        setIframeHeight();
+
+        // Adjust iframe height when the window is resized
+        window.onresize = setIframeHeight;
+
         // Append a timestamp to the iframe sources to ensure cache update on every refresh
         const timestamp = new Date().getTime();
         document.getElementById('about-me-frame').src = 'pages/about-me.html?ts=' + timestamp;
