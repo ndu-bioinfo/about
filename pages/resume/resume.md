@@ -5,30 +5,34 @@
 
 ## Areas of Expertise
 
-
 **Bioinformatics & Computational Biology**  
-Expertise in multiomics data analysis and the integration of computational methods with biological insights.
+Multiomics data analysis and integration of computational methods with biological insights.
 
-**Data Science & Statistics**  
-Development and application of machine learning, AI models, and statistical methods for drug discovery.
+**Data Science & Machine Learning**  
+Application of machine learning, AI models, and statistical methods for drug discovery and bioinformatics.
 
-**Pipeline Engineering**  
-Design and implementation of robust, scalable pipelines for high-throughput data processing and quality control.
+**Pipeline Development & Engineering**  
+Design and implementation of scalable, high-throughput pipelines for data processing, quality control, and automation.
 
-**Data Management & Integration**
-Expertise in organizing, integrating, and maintaining large-scale datasets, including database management, API development, and efficient data retrieval to ensure seamless data access and use.
+**Data Management & Integration**  
+Proficient in managing, integrating, and maintaining large datasets, including database management, API development, and efficient data retrieval.
 
-## Technical skills
-**Programming Languages** 
-Python, R, SQL, Bash  
-**Cloud/Grid Computing** 
-Experience with cloud platforms and grid HPC computing environments  
+## Technical Skills
+
+**Programming Languages**  
+Python, R, SQL, Bash; scikit-learn, biopython, plotly, PyTorch, TensorFlow, FastAPI, Flask, Streamlit  
+
+**Cloud & HPC Computing**  
+SGE, GCP, AWS, Docker, Kubernetes, Snakemake, Nextflow, CI/CD, API development  
+
+**Bioinformatics**  
+NGS pipelines, RNA-seq, DNA-seq, single-cell, CITE-seq, 16S/18S, metagenomics, metatranscriptomics, variant calling, oligo design, microbiome analysis, deep learning, machine learning, Bayesian statistics, IVD assay development, quality control, sequencing platform optimization
 
 ## Professional Experience
 
 ### Visiting Bioinformatics Scientist  
 **J. Craig Venter Institute**  
-May 2024 – Present  
+May 2024 – Current  
 - Developing a Bayesian statistics-based toolkit for drug discovery and clinical data analysis, specifically designed for undersampled datasets with outliers.  
 
 ### Senior Bioinformatics Scientist  
