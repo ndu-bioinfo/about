@@ -8,7 +8,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            padding: 20px;
+            padding: 0;
+            margin: 0;
         }
         .tab-content {
             margin-top: 20px;
@@ -18,10 +19,14 @@
             height: 100vh;
             border: none;
         }
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid"> <!-- Change to container-fluid for full width -->
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
