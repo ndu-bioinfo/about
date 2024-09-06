@@ -23,7 +23,7 @@
             position: relative;
             width: 400px; /* Default minimized width */
             height: 200px; /* Default minimized height */
-            max-width: 1800px; /* Maximum width when expanded */
+            max-width: 1500px; /* Maximum width when expanded */
             max-height: 1200px; /* Maximum height when expanded */
             transition: all 0.3s ease;
             overflow: hidden;
@@ -40,7 +40,7 @@
         /* Fullscreen styles */
         .fullscreen {
             width: 100%;
-            max-width: 1800px;
+            max-width: 1500px;
             height: 100%;
             max-height: 1200px;
         }
@@ -107,7 +107,7 @@
         // Function to expand iframe to a larger size (max 1500x800 or browser size)
         function expandIframe() {
             container.classList.add('fullscreen');  // Add full screen class
-            container.style.width = Math.min(window.innerWidth, 1800) + 'px'; // Expand to max 1500px or browser width
+            container.style.width = Math.min(window.innerWidth, 1500) + 'px'; // Expand to max 1500px or browser width
             container.style.height = Math.min(window.innerHeight, 1200) + 'px'; // Expand to max 800px or browser height
             expandBtn.style.display = 'none';  // Hide expand button
             minimizeBtn.style.display = 'block';  // Show minimize button
