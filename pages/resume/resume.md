@@ -8,8 +8,8 @@
 **Bioinformatics & Computational Biology**  
 Multiomics data analysis and integration of computational methods with biological insights.
 
-**Data Science & Machine Learning**  
-Application of machine learning, AI models, and statistical methods for drug discovery and bioinformatics.
+**Machine Learning & AI for Biological Data**  
+Application of machine learning and AI models for analyzing complex biological datasets, such as genomics, drug discovery, and bioinformatics pipelines.
 
 **Pipeline Development & Engineering**  
 Design and implementation of scalable, high-throughput pipelines for data processing, quality control, and automation.
@@ -20,10 +20,10 @@ Proficient in managing, integrating, and maintaining large datasets, including d
 ## Technical Skills
 
 **Programming Languages**  
-Python, R, SQL, Bash; scikit-learn, biopython, plotly, PyTorch, TensorFlow, FastAPI, Flask, Streamlit  
+Python, R, SQL, Bash; scikit-learn, biopython, plotly, PyTorch, FastAPI, Flask, Streamlit  
 
 **Cloud & HPC Computing**  
-SGE, GCP, AWS, Docker, Kubernetes, Snakemake, Nextflow, CI/CD, API development  
+SGE, GCP, AWS, Docker, Kubernetes, Snakemake, CI/CD, API development  
 
 **Bioinformatics**  
 NGS pipelines, RNA-seq, DNA-seq, single-cell, CITE-seq, 16S/18S, metagenomics, metatranscriptomics, variant calling, oligo design, microbiome analysis, deep learning, machine learning, Bayesian statistics, IVD assay development, quality control, sequencing platform optimization
@@ -33,20 +33,18 @@ NGS pipelines, RNA-seq, DNA-seq, single-cell, CITE-seq, 16S/18S, metagenomics, m
 ### Visiting Bioinformatics Scientist  
 **J. Craig Venter Institute**  
 May 2024 – Current  
-- Developing a Bayesian statistics-based toolkit for drug discovery and clinical data analysis, specifically designed for undersampled datasets with outliers.  
+- Researched and developed an optimized workflow for Bayesian inference to select the best model for fitting undersampled biological data, utilizing a coupled approach of simulated annealing and Markov Chain Monte Carlo (MCMC).
+- Built a tools package to implement this workflow, enabling efficient application of Bayesian inference, and tested its performance on real-world pharmacological and clinical datasets.
 
 ### Senior Bioinformatics Scientist  
 **Creyon Bio**  
 September 2022 – May 2024  
-- Developed and implemented next-generation sequencing (NGS) pipelines on the Google Cloud Platform (GCP) for quality control, data management, and execution monitoring, tailored for drug discovery research.  
-- Integrated pipelines with cloud platforms and developed APIs to ensure seamless data flow from storage to databases and dashboard visualizations, facilitating effective data science workflows.  
-- Conducted data analyses to optimize pipeline performance and refine quality control outputs, enhancing accuracy and efficiency in identifying potential drug targets.  
-- Developed machine learning algorithms for weight-based Negative Binomial likelihood estimation, improving the detection of active pharmaceutical ingredients in antisense oligonucleotide (ASO) drug development.  
-- Managed Docker containers for pipeline modules and implemented CI/CD pipelines for package repositories, significantly improving deployment efficiency and reliability.  
-- Evaluated and optimized sequencing platforms, leading troubleshooting efforts to improve sequencing reliability and operational efficiency, essential for high-throughput drug screening.  
-- Collaborated with the sequencing team to troubleshoot experimental issues and develop custom Python tools, supporting both production and research and development (R&D) operations in drug discovery.  
+- Developed and implemented next-generation sequencing (NGS) pipelines for QuantSeq and allele-specific expression (ASE) analysis, enhancing the accuracy of gene expression studies.
+- Designed sparse grid Bayesian optimization for target detection in antisense oligonucleotide (ASO) drug development.
+- Led the streamlining of bioinformatics workflows, ensuring smooth integration of data from research teams across production and R&D for increased efficiency.
+- Integrated NGS pipelines with cloud platforms, developing APIs to ensure seamless data flow between storage systems, databases, and visualization dashboards, facilitating more effective data science workflows.
+- Performed extensive data analyses to optimize pipeline performance, refining quality control processes to enhance the accuracy and efficiency of target identification in drug discovery.
 - Established design and technical guidelines for pipeline frameworks, standardizing implementation and operational best practices in bioinformatics and drug discovery projects.  
-- Provided mentorship to junior bioinformatics scientists and created comprehensive onboarding documentation, streamlining team integration and enhancing productivity in data-driven drug discovery projects.  
 
 ### Bioinformatics Engineer, Algorithm  
 **Invitae Corporation**  
@@ -92,8 +90,9 @@ April 2018 – April 2019
 ## Education
 
 
-**Ph.D. in Marine Biology**  
-University of California, San Diego  
+**Ph.D. in Biology**  
+University of California, San Diego 
+Scripps Institution of Oceanography
 2011 – 2018  
 Research focus: Application of systems biology and bioinformatics on modeling marine microorganism pathway kinetics  
 
