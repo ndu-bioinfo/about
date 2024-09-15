@@ -6,24 +6,24 @@
 ## Areas of Expertise
 
 **Bioinformatics & Computational Biology**  
-Multiomics data analysis and integration of computational methods with biological insights.
+Multiomics data analysis, integrating computational techniques with biological insights to drive advancements in genomics, transcriptomics, and other omics fields.
 
-**Machine Learning & AI for Biological Data**  
-Application of machine learning and AI models for analyzing complex biological datasets, such as genomics, drug discovery, and bioinformatics pipelines.
+**Machine Learning & AI for Multi-omics Data Analysis**  
+Applied machine learning models to extract meaningful insights from complex biological datasets, including genomics, microbiome, and single-cell data, supporting precision medicine and drug development.
 
 **Pipeline Development & Engineering**  
-Design and implementation of scalable, high-throughput pipelines for data processing, quality control, and automation.
+Designed and implemented scalable, high-throughput pipelines for data processing, quality control, and automation, ensuring reproducibility and efficiency in bioinformatics workflows.
 
 **Data Management & Integration**  
-Proficient in managing, integrating, and maintaining large datasets, including database management, API development, and efficient data retrieval.
+Proficient in managing and integrating large-scale datasets, with expertise in database management, API development, and efficient data retrieval to support seamless data analysis and visualization.
 
 ## Technical Skills
 
 **Programming Languages**  
-Python, R, SQL, Bash; scikit-learn, biopython, plotly, PyTorch, FastAPI, Flask, Streamlit  
+Python, R, SQL, Bash 
 
 **Cloud & HPC Computing**  
-SGE, GCP, AWS, Docker, Kubernetes, Snakemake, CI/CD, API development  
+SGE, GCP, AWS, Docker, Kubernetes, CI/CD, API development  
 
 **Bioinformatics**  
 NGS pipelines, RNA-seq, DNA-seq, single-cell, CITE-seq, 16S/18S, metagenomics, metatranscriptomics, variant calling, oligo design, microbiome analysis, deep learning, machine learning, Bayesian statistics, IVD assay development, quality control, sequencing platform optimization
@@ -33,28 +33,29 @@ NGS pipelines, RNA-seq, DNA-seq, single-cell, CITE-seq, 16S/18S, metagenomics, m
 ### Visiting Bioinformatics Scientist  
 **J. Craig Venter Institute**  
 May 2024 – Current  
-- Researched and developed an optimized workflow for Bayesian inference to select the best model for fitting undersampled biological data, utilizing a coupled approach of simulated annealing and Markov Chain Monte Carlo (MCMC).
-- Built a tools package to implement this workflow, enabling efficient application of Bayesian inference, and tested its performance on real-world pharmacological and clinical datasets.
+- Designed and implemented a Bayesian inference workflow optimized for non-linear model optimization, significantly improving the detection of targets in dose-response data. This approach uncovered 976 (20.3%) additional targets in chemotherapy drug discovery (paper in preparation).
+- Developed a generalized tool package for the Bayesian workflow, extending its application across diverse biological datasets, including enzyme activity and tumor growth data. This toolkit has laid the groundwork for applying probabilistic modeling in other omics data types, facilitating broader adoption of Bayesian methods in biological research.
 
 ### Senior Bioinformatics Scientist  
 **Creyon Bio**  
 September 2022 – May 2024  
-- Developed and implemented next-generation sequencing (NGS) pipelines for QuantSeq and allele-specific expression (ASE) analysis, enhancing the accuracy of gene expression studies.
-- Designed sparse grid Bayesian optimization for target detection in antisense oligonucleotide (ASO) drug development.
-- Led the streamlining of bioinformatics workflows, ensuring smooth integration of data from research teams across production and R&D for increased efficiency.
-- Integrated NGS pipelines with cloud platforms, developing APIs to ensure seamless data flow between storage systems, databases, and visualization dashboards, facilitating more effective data science workflows.
-- Performed extensive data analyses to optimize pipeline performance, refining quality control processes to enhance the accuracy and efficiency of target identification in drug discovery.
-- Established design and technical guidelines for pipeline frameworks, standardizing implementation and operational best practices in bioinformatics and drug discovery projects.  
+- Developed and implemented next-generation sequencing (NGS) pipelines for QuantSeq and allele-specific expression (ASE) assays, establishing production-stable pipelines from scratch. These pipelines formed the foundation for Creyon Bio’s successful efforts in TNPO2 drug discovery, contributing to the company’s advancements in rare disease therapy[https://globalgenes.org/raredaily/644745/].
+- Designed a sparse grid Bayesian optimization algorithm for target detection in antisense oligonucleotide (ASO) drug development, improving the identification of therapeutic targets and optimizing experimental designs for efficient drug screening.
+- Applied machine learning models, including neural networks and XGBoost, to enhance toxicity prediction, integrating predictive analytics into the drug development process and improving the selection of viable drug candidates.
+- Led workflow streamlining efforts, improving cross-departmental data integration between production and R&D teams, thereby increasing the overall efficiency of the bioinformatics pipeline and reducing data processing times.
+- Integrated cloud-based solutions, creating APIs that facilitated seamless data flow between cloud storage systems, databases, and visualization platforms. This integration enabled real-time data analytics and fostered a more data-driven approach to drug discovery.
+- Performed in-depth data analyses to optimize pipeline performance, refining quality control processes to improve the reliability of NGS data and enhance the accuracy of target identification in drug discovery projects.
+- Established technical guidelines for pipeline frameworks, ensuring consistency in bioinformatics operations and providing a foundation for the scalable development of future bioinformatics workflows
 
 ### Bioinformatics Engineer, Algorithm  
 **Invitae Corporation**  
 June 2020 – September 2022  
-- Led the development of in vitro diagnostic (IVD) targeted DNA diagnostic assays for clinical use, contributing to successful product launches.  
-- Developed an automated oligo design workflow, reducing sequencing costs by 45% and increasing operational efficiency.  
-- Developed machine-learning-based target classification algorithms to improve assay specificity and sensitivity.  
-- Directed the development of bioinformatics tools from concept to library integration, ensuring robustness and reliability through comprehensive testing.  
-- Troubleshot pipeline operational issues and provided emergency response to address critical issues for customers, ensuring system stability and reliability.  
-- Actively participated in code reviews, planning sessions, and best practices discussions, fostering a collaborative and high-quality development environment.  
+- Led the development of in vitro diagnostic (IVD) targeted DNA diagnostic assays for clinical use, directly contributing to the successful launch of multiple diagnostic products used in clinical settings, ensuring high sensitivity and specificity in detecting genetic variants.
+- Developed an automated oligo design workflow that significantly reduced sequencing costs by 45%, optimizing reagent use and streamlining lab operations for greater operational efficiency across multiple diagnostic and carrier screening assay development projects.
+- Implemented machine-learning-based target classification algorithms to streamline and systematically improve the efficiency of the QA process for called genetic variants. This innovation reduced the time required for assay quality assessment from two months to two weeks, accelerating the validation workflow and improving the overall throughput of genetic data analysis.
+- Directed the end-to-end development of bioinformatics tools, from initial concept to full integration into production libraries, ensuring robustness and reliability through rigorous performance testing and validation processes. 
+- Managed troubleshooting and provided emergency support to resolve critical pipeline issues, maintaining system uptime and stability for customers, and ensuring continuous diagnostic services in clinical workflows.
+- Actively contributed to code reviews, planning sessions, and best practices discussions, fostering a collaborative development environment focused on quality and continuous improvement in bioinformatics tool development.
 
 ### Postdoctoral Fellow  
 **La Jolla Institute for Immunology**  
